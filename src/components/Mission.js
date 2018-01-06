@@ -1,54 +1,50 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import map from 'lodash.map';
 
-const Container = styled.div`
-font-size: 1.5em;
-text-align: center;
-color: palevioletred;
+import Container from './BaseComponent/Container';
+
+const MissionContainer = styled.div`
+
+`;
+const CardContainer = styled.div`
+  display: flex;
+  text-align: left;
+  margin-bottom: 10px;
+  background: red;
+
+  img {
+    width: 60px;
+    height: 60px;
+    background: grey;
+    margin-right: 10px;
+  }
+`;
+const MissionItemWrapper = styled.div`
+
 `;
 
-const missions = [
-  {
-    id: 1,
-    date: {
-      startDate: '01/01/2018',
-      endDate: '06/01/2018'
-    },
-  },
-  {
-    id: 2,
-    date: {
-      startDate: '01/01/2018',
-      endDate: '06/01/2018'
-    },
-  },
-  {
-    id: 3,
-    date: {
-      startDate: '01/01/2018',
-      endDate: '06/01/2018'
-    },
-  },
-  {
-    id: 4,
-    date: {
-      startDate: '01/01/2018',
-      endDate: '06/01/2018'
-    },
-  }
-]
+const MissionItem = ({ name, detail }) => {
+  return (
+    <CardContainer>
+      <img />
+      <MissionItemWrapper>
+        <div>{name}</div>
+        <div>{detail}</div>
+      </MissionItemWrapper>
+    </CardContainer>
+  );
+};
 
 class Mission extends Component {
   render() {
+    const { missions } = this.props;
+
     return (
-      <Container>
-        {/* <Button type="primary">Primary</Button>
-        <Button>Default</Button> */}
-        {missions.map((mission) => 
-          <div>
-            {mission.id}
-          </div>
-        )}
+      <Container header={'Mission'}>
+        {map(missions, (m) => {
+          return <MissionItem name={m.name} detail={m.detail}/>;
+        })}
       </Container>
     );
   }

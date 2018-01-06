@@ -2,15 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import map from 'lodash.map';
 
-const Container = styled.div`
-  width: 100%;
-  height: 100%;
-`;
-
-const InnerContainer = styled.div`
-  margin: 0 auto;
-  max-width: 900px;
-`;
+import Container from './BaseComponent/Container';
 
 const InfoContainer = styled.div`
   display: flex;
@@ -95,27 +87,24 @@ class Profile extends Component {
     const { name, lastname, age, weight, height, registerDate } = profile;
 
     return (
-      <Container>
-        Profile
-        <InnerContainer>
-          <InfoContainer>
-            <ImageWrapper><img /></ImageWrapper>
-            <InfoWrapper>
-              <InfoItem field={"ชื่อ: "} value={`${name} ${lastname}`} />
-              <InfoItem field={"อายุ: "} value={age} />
-              <InfoItem field={"น้ำหนัก: "} value={weight} />
-              <InfoItem field={"ส่วนสูง: "} value={height} />
-              <InfoItem update field={"เข้าร่วมเมื่อ: "} value={registerDate} />
-            </InfoWrapper>
-          </InfoContainer>
-          <MissionContainer>
-            {
-              map(missions, (m, id) => {
-                return <MissionItem name={m.name} detail={m.detail} />
-              })
-            }
-          </MissionContainer>
-        </InnerContainer>
+      <Container header={'Profile'}>
+        <InfoContainer>
+          <ImageWrapper><img /></ImageWrapper>
+          <InfoWrapper>
+            <InfoItem field={"ชื่อ: "} value={`${name} ${lastname}`} />
+            <InfoItem field={"อายุ: "} value={age} />
+            <InfoItem field={"น้ำหนัก: "} value={weight} />
+            <InfoItem field={"ส่วนสูง: "} value={height} />
+            <InfoItem update field={"เข้าร่วมเมื่อ: "} value={registerDate} />
+          </InfoWrapper>
+        </InfoContainer>
+        <MissionContainer>
+          {
+            map(missions, (m, id) => {
+              return <MissionItem name={m.name} detail={m.detail} />
+            })
+          }
+        </MissionContainer>
       </Container>
     );
   }
