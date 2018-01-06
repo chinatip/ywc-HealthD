@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-// import { Button } from 'antd';
-
 const Container = styled.div`
 font-size: 1.5em;
 text-align: center;
