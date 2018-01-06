@@ -20,7 +20,8 @@ const Header = styled.div`
   justify-content: center;
   background-image: url('${Image}');
   background-size: cover;
-  background-position: 0px -80px; 
+  background-position: 0px -80px;
+  background-repeat: no-repeat;
 
   h2 {
     text-shadow: 2px 2px 5px #000;
