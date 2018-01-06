@@ -36,7 +36,7 @@ const Modal = styled.div`
 class Knowledge extends Component {
   render() {
     return (
-      <Container value={'เปิดกรุเกร็ดความรู้… ดูซิว่าทำ(ภารกิจ)แล้วได้อะไร'}>
+      <Container header={'เปิดกรุเกร็ดความรู้… ดูซิว่าทำ(ภารกิจ)แล้วได้อะไร'}>
         <Content>
           <div class="row">
             <div class="col col1">
