@@ -7,8 +7,9 @@ import Document from '../images/document.svg'
 import Medal from '../images/medal.svg'
 import Photo from '../images/photo.svg'
 import Tab from '../images/tab.svg'
+import TreeImage from '../images/tree.png'
 
-import HealthD from '../images/Logo.png'
+import HealthD from '../images/Logo-orange.png'
 
 const Container = styled.div`
   height: 100%;
@@ -42,11 +43,11 @@ const Header = styled.div`
     margin-top: 20px;
   }
 
-  ${media.tablet`
+  ${media.mobile`
 
     h2{
       margin-top: 20px;
-      font-size: 23px;
+      font-size: 22px;
     }
     .col-10 {
       margin-top: 100px;
@@ -59,7 +60,7 @@ const Header = styled.div`
 
 `;
 
-const size = 250
+const size = 350
 
 const Logo = styled.div`
   width: ${size}px;
@@ -67,7 +68,7 @@ const Logo = styled.div`
   border-radius: ${size / 2}px;
   margin-top: ${size / 2}px;
   background-image: url('${HealthD}');
-  background-position: 30px 50px;
+  background-position: 50px 50px;
   background-repeat: no-repeat;
   align-self: flex-end;
   position: absolute;
@@ -96,6 +97,26 @@ const Icon = styled.img`
   `}
 `
 
+const Tree = styled.div`
+height: 100vh;
+align-item: center;
+justify-content: center;
+background-image: url('${TreeImage}');
+background-size: cover;
+background-position: 0px -80px;
+background-repeat: no-repeat;
+color: black;
+
+h1{
+  font-size: 25px;
+  margin-top: 20px;
+}
+
+.row{
+  margin-top: 50px;
+}
+`
+
 class Home extends Component {
   render() {
     return (
@@ -103,7 +124,7 @@ class Home extends Component {
         <Header>
           <div class="row" style={{ width: '100%' }}>
             <div class="col-10">
-              <h2>ของฟรีไม่มีขาย ถ้าอยากได้มาทำ <br />Mission เรา!</h2>
+              <h2>"อยากให้คนไทยสุขภาพดี  <br />และได้ของฟรีไปพร้อมๆกัน"</h2>
               <button type="submit" class="btn btn-default">เริ่มกันเลย</button>
             </div>
             <div class="col">
@@ -139,6 +160,56 @@ class Home extends Component {
             </div>
           </div>
         </HowTo>
+
+        <Tree>
+          <div class="row">
+            <div class="col">
+              <h1 style={{marginLeft: '30px'}}>ลุ้น Package ทัวร์ ญี่ปุ่น พร้อมผู้ติดตาม 5 วัน 4 คืน </h1>
+            </div>
+            <div class="col">
+            </div>
+            <div class="col">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+            </div>
+            <div class="col">
+            </div>
+            <div class="col">
+            <h1>  voucher อาหารคลีน/เพื่อสุขภาพ  10 รางวัล </h1>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+            <h1>   รองเท้าวิ่ง 1 รางวัล</h1>
+            </div>
+            <div class="col">
+            </div>
+            <div class="col">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              
+            </div>
+            <div class="col">
+            </div>
+            <div class="col">
+            <h1> กางเกงโยคะ 1 รางวัล</h1>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+            <h1> กระเป๋าเดินทาง 1 รางวัล</h1>
+            </div>
+            <div class="col">
+            </div>
+            <div class="col">
+           
+            </div>
+          </div>
+        </Tree>
       </Container>
     );
   }
