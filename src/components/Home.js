@@ -34,6 +34,14 @@ const Header = styled.div`
     margin-top: 160px;
   }
 
+  button {
+    width: 15%;
+    background-color: #ef551f;
+    color: white;
+    border-radius: 40px;
+    margin-top: 20px;
+  }
+
   ${media.tablet`
 
     h2{
@@ -43,6 +51,9 @@ const Header = styled.div`
     .col-10 {
       margin-top: 100px;
       margin-left: 30px;
+    }
+    button {
+      width: 40%;
     }
   `}
 
@@ -67,11 +78,22 @@ const About = styled.div`
 
 const HowTo = styled.div`
   height: 40vh;
+
+  p {
+    margin-top: 5px;
+  }
+
+  ${media.tablet`
+    margin-top: 50px;
+  `}
 `
 
 const Icon = styled.img`
-  margin-top: 70px;
   height: 100px;
+
+  ${media.tablet`
+    height: 80px;
+  `}
 `
 
 class Home extends Component {
@@ -81,8 +103,8 @@ class Home extends Component {
         <Header>
           <div class="row" style={{ width: '100%' }}>
             <div class="col-10">
-              <h2 style={{ }}>ของฟรีไม่มีขาย ถ้าอยากได้มาทำ <br />Mission เรา!</h2>
-              <button type="submit" class="btn btn-default" style={{ width: '30%', backgroundColor: '#ef551f', color: 'white', borderRadius: '40px', marginTop: '20px' }}>เริ่มกันเลย</button>
+              <h2>ของฟรีไม่มีขาย ถ้าอยากได้มาทำ <br />Mission เรา!</h2>
+              <button type="submit" class="btn btn-default">เริ่มกันเลย</button>
             </div>
             <div class="col">
             </div>
@@ -98,24 +120,24 @@ class Home extends Component {
           </h5>
         </About>
         <HowTo>
-        <div class="row" style={{}}>
-    <div class="col">
-      <Icon src={Document}/>
-      <p>สมัครสมาชิก</p>
-    </div>
-    <div class="col">
-    <Icon src={Tab}/>
-      <p>เลือกภารกิจ</p>
-    </div>
-    <div class="col">
-    <Icon src={Photo}/>
-     <p>ปฎิบัติและยืนยันภาระกิจ</p>
-    </div>
-    <div class="col">
-    <Icon src={Medal}/>
-      <p>รับคะแนนสะสม</p>
-    </div>
-  </div>
+          <div class="row">
+            <div class="col">
+              <Icon src={Document} />
+              <p>สมัครสมาชิก</p>
+            </div>
+            <div class="col">
+              <Icon src={Tab} />
+              <p>เลือกภารกิจ</p>
+            </div>
+            <div class="col">
+              <Icon src={Photo} />
+              <p>ปฎิบัติและยืนยันภาระกิจ</p>
+            </div>
+            <div class="col">
+              <Icon src={Medal} />
+              <p>รับคะแนนสะสม</p>
+            </div>
+          </div>
         </HowTo>
       </Container>
     );
