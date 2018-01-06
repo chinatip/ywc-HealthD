@@ -7,10 +7,11 @@ import Container from './BaseComponent/Container';
 const MissionContainer = styled.div`
 
 `;
-const MissionItemContainer = styled.div`
+const CardContainer = styled.div`
   display: flex;
   text-align: left;
   margin-bottom: 10px;
+  background: red;
 
   img {
     width: 60px;
@@ -25,13 +26,13 @@ const MissionItemWrapper = styled.div`
 
 const MissionItem = ({ name, detail }) => {
   return (
-    <MissionItemContainer>
+    <CardContainer>
       <img />
       <MissionItemWrapper>
         <div>{name}</div>
         <div>{detail}</div>
       </MissionItemWrapper>
-    </MissionItemContainer>
+    </CardContainer>
   );
 };
 
@@ -40,7 +41,7 @@ class Mission extends Component {
     const { missions } = this.props;
 
     return (
-      <Container>
+      <Container header={'Mission'}>
         {map(missions, (m) => {
           return <MissionItem name={m.name} detail={m.detail}/>;
         })}

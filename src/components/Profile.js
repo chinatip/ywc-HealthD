@@ -87,8 +87,7 @@ class Profile extends Component {
     const { name, lastname, age, weight, height, registerDate } = profile;
 
     return (
-      <Container>
-        Profile
+      <Container header={'Profile'}>
         <InfoContainer>
           <ImageWrapper><img /></ImageWrapper>
           <InfoWrapper>

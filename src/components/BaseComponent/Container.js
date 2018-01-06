@@ -9,11 +9,20 @@ const ContainerWrapper = styled.div`
 const InnerContainer = styled.div`
 
 `;
+const Header = styled.div`
+  font-size: 30px;
+  line-height: 50px;
+  font-weight: bold;
+  letter-spacing: 2px;
+`;
 
 class Container extends Component {
   render() {
+    const { header } = this.props;
+
     return (
       <ContainerWrapper>
+        <Header>{header}</Header>
         <InnerContainer>{this.props.children}</InnerContainer>
       </ContainerWrapper>
     );  

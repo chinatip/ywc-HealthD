@@ -12,8 +12,8 @@ export const NavBar = () => {
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         </ul>
         <ul class="navbar-nav my-2 my-lg-0">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">หน้าแรก <span class="sr-only">(current)</span></a>
+          <li class="nav-item">
+            <Link class="nav-link" to="/">หน้าแรก</Link>
           </li>
           <li class="nav-item">
             <Link class="nav-link" to="/missions">ภารกิจ</Link>
@@ -22,7 +22,7 @@ export const NavBar = () => {
             <a class="nav-link" href="#">เกร็ดความรู้</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">การซื้อขาย</a>
+            <a class="nav-link" href="#">แคลอรี่</a>
           </li>
           <li class="nav-item">
             <Link class="nav-link" to="/profile">โปรไฟล์</Link>
