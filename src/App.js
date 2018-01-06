@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 
-import Home from './components/Home'
-import Profile from './components/Profile'
-import Mission from './components/Mission'
+import { WithData } from './hoc';
+import Home from './components/Home';
+import Profile from './components/Profile';
+import Mission from './components/Mission';
 
 class App extends Component {
 
@@ -23,6 +24,8 @@ class App extends Component {
 
 
   render() {
+    const { users, missions } = this.props;
+
     return (
       <div className="App">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -56,9 +59,9 @@ class App extends Component {
         </nav>
         <Router>
           <div>
-            <Route exact path="/" component={Home} />
-            <Route path="/profile" component={Profile} />
-            <Route path="/mission" component={Mission} />
+            <Route exact path="/" render={(props) => <Home {...this.props} />} />
+            <Route path="/profile" render={(props) => <Profile profile={users[Object.keys(users)[0]]} missions={missions} />} />
+            <Route path="/mission"render={(props) => <Mission {...this.props} />}  />
           </div>
         </Router>
       </div>
@@ -66,4 +69,6 @@ class App extends Component {
   }
 }
 
-export default App;
+// export default App;
+
+export default WithData(App);

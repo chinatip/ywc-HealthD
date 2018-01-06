@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-import { Button } from 'antd';
+// import { Button } from 'antd';
 
 const Container = styled.div`
 font-size: 1.5em;
@@ -44,8 +44,8 @@ class Mission extends Component {
   render() {
     return (
       <Container>
-        <Button type="primary">Primary</Button>
-        <Button>Default</Button>
+        {/* <Button type="primary">Primary</Button>
+        <Button>Default</Button> */}
         {missions.map((mission) => 
           <div>
             {mission.id}
