@@ -10,13 +10,15 @@ import Mission from './components/Mission';
 
 class App extends Component {
   render() {
+    const { users, missions } = this.props;
+
     return (
       <div className="App">
         <Router>
           <div>
-            <Route exact path="/" component={Home} />
-            <Route path="/profile" component={Profile} />
-            <Route path="/mission" component={Mission} />
+            <Route exact path="/" render={(props) => <Home {...this.props} />} />
+            <Route path="/profile" render={(props) => <Profile profile={users[Object.keys(users)[0]]} missions={missions} />} />
+            <Route path="/mission"render={(props) => <Mission {...this.props} />}  />
           </div>
         </Router>
       </div>

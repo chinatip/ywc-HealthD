@@ -22,7 +22,7 @@ export const WithUserData = (Component) => {
     render() {
       const { data } = this.state;
 
-      return <Component userData={data} onUserDataUpdate={this.handleUpdate} {...this.props} />;
+      return <Component users={data} onUserDataUpdate={this.handleUpdate} {...this.props} />;
     }
   }
 };
@@ -46,7 +46,7 @@ export const WithMissionData = (Component) => {
     render() {
       const { data } = this.state;
 
-      return <Component missionData={data} onMissionDataUpdate={this.handleUpdate}  {...this.props} />;
+      return <Component missions={data} onMissionDataUpdate={this.handleUpdate}  {...this.props} />;
     }
   }
 };
