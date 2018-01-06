@@ -7,6 +7,7 @@ import Home from './components/Home';
 import Profile from './components/Profile';
 import Mission from './components/Mission';
 import Knowledge from './components/Knowledge';
+import Marketing from './components/Marketing';
 
 import './App.css';
 import logo from './logo.svg';
@@ -37,6 +38,7 @@ class App extends Component {
             <Route path="/profile" render={(props) => <Profile profile={users[Object.keys(users)[0]]} missions={missions} />} />
             <Route path="/missions"render={(props) => <Mission {...this.props} />}  />
             <Route path="/knowledge"render={(props) => <Knowledge {...this.props} />}  />
+            <Route path="/marketing"render={(props) => <Marketing {...this.props} />}  />
           </div>
         </Router>
       </div>

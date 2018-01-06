@@ -23,7 +23,7 @@ export const NavBar = () => {
               <a class="nav-link" href="/knowledge">เกร็ดความรู้</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">แคลอรี่</a>
+              <a class="nav-link" href="/marketing">แคลอรี่</a>
             </li>
             <li class="nav-item">
               <Link class="nav-link" to="/profile">โปรไฟล์</Link>
