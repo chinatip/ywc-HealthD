@@ -36,6 +36,7 @@ class App extends Component {
             <Route exact path="/" render={(props) => <Home {...this.props} />} />
             <Route path="/profile" render={(props) => <Profile profile={users[Object.keys(users)[0]]} missions={missions} />} />
             <Route path="/missions"render={(props) => <Mission {...this.props} />}  />
+            <Route path="/knowledge"render={(props) => <Knowledge {...this.props} />}  />
           </div>
         </Router>
       </div>

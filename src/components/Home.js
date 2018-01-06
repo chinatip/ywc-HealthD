@@ -97,32 +97,6 @@ class Home extends Component {
     </div>
   </div>
         </HowTo>
-
-        {/* ef551f */}
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content" style={{ background: '#ef551f' }}>
-              <div class="modal-head">
-                <button type="button" style={{ position: 'absolute', right: '10px', top: '5px' }} class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <form style={{ marginTop: '50px' }}>
-                  <div class="form-group">
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="อีเมล" />
-                  </div>
-                  <div class="form-group" style={{ marginTop: '20px' }}>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="รหัสผ่าน" />
-                  </div>
-
-                  <h6 style={{ textAlign: 'left', color: 'white', opacity: 0.8 }}>ลืมรหัสผ่าน</h6>
-                  <button type="submit" class="btn btn-default" style={{ width: '100%', backgroundColor: 'transparent', border: '1px solid white', color: 'white', marginTop: '20px' }}>เข้าสู่ระบบ</button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
       </Container>
     );
   }
