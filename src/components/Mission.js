@@ -5,8 +5,13 @@ import map from 'lodash.map';
 import Container from './BaseComponent/Container';
 import { Button } from './BaseComponent/Button';
 
+const InnerContainer = styled.div`
+  margin-bottom: 50px;
+`;
+
 const MissionContainer = styled.div`
   display: flex;
+  margin-bottom: 70px;
 `;
 
 const WelcomeWrapper = styled.div`
@@ -68,14 +73,27 @@ const Subtitle = styled.div`
   letter-spacing: 0.5px;
   color: #848181f7;
 `;
+const Score = styled.div`
+  font-size: 14px;
+  color: #ef5420;
+`;
 
-const MissionItem = ({ name, detail }) => {
+const OtherMission = styled.div`
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  text-align: left;
+  color: #de653b;
+`;
+
+const MissionItem = ({ name, detail = '', score }) => {
   return (
     <CardContainer>
       <img />
       <MissionItemWrapper>
         <Title>{name}</Title>
         <Subtitle>{detail}</Subtitle>
+        <Score>{`${score} คะแนน`}</Score>
       </MissionItemWrapper>
       <Button value="เข้าร่วม" />
     </CardContainer>
@@ -87,19 +105,24 @@ class Mission extends Component {
     const { missions } = this.props;
 
     return (
-      <Container header={'Mission'}>
-        <MissionContainer>
-          <WelcomeWrapper>
-            <Header>ภารกิจประจำสัปดาห์</Header>
-            <SubHeader>ในสัปดาห์นี้ ภารกิจที่คุณสามารถเลือกทำได้ มีทั้งหมด 3 ภารกิจ ได้แก่...</SubHeader>
-            <Condition>* เงื่อนไขการปฏิบัติภารกิจ: แต่ละภารกิจมีอายุ 1 สัปดาห์ (เริ่มต้นวันจันทร์ สิ้นสุดวันอาทิตย์) หากยืนยันภารกิจได้ไม่ครบถ้วนภายในเวลา จะถือว่าภารกิจนั้นไม่สำเร็จ และจะไม่ได้รับคะแนนของภารกิจดังกล่าว</Condition>
-          </WelcomeWrapper>
-          <MissionList>
-            { map(missions, (m) => {
-              return <MissionItem name={m.name} detail={m.detail}/>;
-            })}
-          </MissionList>
-        </MissionContainer>
+      <Container header={'ภารกิจ'}>
+        <InnerContainer>
+          <MissionContainer>
+            <WelcomeWrapper>
+              <Header>ภารกิจประจำสัปดาห์</Header>
+              <SubHeader>ในสัปดาห์นี้ ภารกิจที่คุณสามารถเลือกทำได้ มีทั้งหมด 3 ภารกิจ ได้แก่...</SubHeader>
+              <Condition>* เงื่อนไขการปฏิบัติภารกิจ: แต่ละภารกิจมีอายุ 1 สัปดาห์ (เริ่มต้นวันจันทร์ สิ้นสุดวันอาทิตย์) หากยืนยันภารกิจได้ไม่ครบถ้วนภายในเวลา จะถือว่าภารกิจนั้นไม่สำเร็จ และจะไม่ได้รับคะแนนของภารกิจดังกล่าว</Condition>
+            </WelcomeWrapper>
+            <MissionList>
+              { map(missions, (m) => {
+                return <MissionItem name={m.name} detail={m.detail} score={m.score}/>;
+              })}
+            </MissionList>
+          </MissionContainer>
+          <OtherMission>ภารกิจอื่นๆ</OtherMission>
+          <MissionItem name={'มินิมาราธอน 2018 รพ.เซนต์หลุยส์'} score={500}/>
+          <MissionItem name={'World Health & Beauty Expo'} score={500}/>
+        </InnerContainer>
       </Container>
     );
   }

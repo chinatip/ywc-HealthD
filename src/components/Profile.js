@@ -7,24 +7,42 @@ import Container from './BaseComponent/Container';
 const InfoContainer = styled.div`
   display: flex;
   margin-bottom: 50px;
+  background: #ececec;
+  padding: 20px;
 `;
 const ImageWrapper = styled.div`
+  position: relative;
   background: grey;
-  margin-right: 20px;
+  margin-right: 50px;
+  border: none;
+  border-radius: 50%;
 
   img {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px; 
+    border-radius: 50%;
   }
 `;
 
 const MissionContainer = styled.div`
 
 `;
-
+const MissionTitle = styled.div`
+  font-size: 14px;
+  margin-bottom: 20px;
+  text-align: left;
+  font-weight: bold;
+`;
+const InfoItemWrapper = styled.div`
+  display: flex;
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  width: 350px;
+`;
 const InfoItemContainer = styled.div`
   display: flex;
-  margin-bottom: 5px;
+  margin-right: 10px;
 
   ${props => props.update && 'align-self: flex-end'};
 `;
@@ -34,11 +52,15 @@ const InfoWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
 `;
-const Field = styled.div`
-  width: 55px;
+const Name = styled.div`
   text-align: left;
-
-  ${props => props.update && 'width: 100%'};
+  color: #ef551f;
+  font-size: 30px;
+  font-weight: bold;
+`;
+const Field = styled.div`
+  text-align: left;
+  margin-right: 10px;
 `;
 const Value = styled.div`
 
@@ -52,6 +74,7 @@ const MissionItemContainer = styled.div`
   img {
     width: 60px;
     height: 60px;
+    border-radius: 2px;
     background: grey;
     margin-right: 10px;
   }
@@ -62,8 +85,8 @@ const MissionItemWrapper = styled.div`
 
 const InfoItem = ({ update = false, field, value }) => {
   return (
-    <InfoItemContainer update={update}>
-      <Field update={update}>{field}</Field>
+    <InfoItemContainer>
+      <Field>{field}</Field>
       <Value>{value}</Value>
     </InfoItemContainer>
   );
@@ -81,24 +104,43 @@ const MissionItem = ({ name, detail }) => {
   );
 };
 
+const ScoreWrapper = styled.div`
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  background: #ef551f;
+  justify-content: center;
+  align-items: center;
+  color: white;
+`;
+
 class Profile extends Component {
   render() {
-    const { profile, missions } = this.props;
-    const { name, lastname, age, weight, height, registerDate } = profile;
+    const { profile } = this.props;
+    const { name, lastname, age, weight, height, registerDate, missions, score } = profile;
 
     return (
-      <Container header={'Profile'}>
+      <Container header={'โปรไฟล์'}>
         <InfoContainer>
-          <ImageWrapper><img /></ImageWrapper>
+          <ImageWrapper>
+            <img />
+            <ScoreWrapper>{`${score} คะแนน`}</ScoreWrapper>
+          </ImageWrapper>
           <InfoWrapper>
-            <InfoItem field={"ชื่อ: "} value={`${name} ${lastname}`} />
-            <InfoItem field={"อายุ: "} value={age} />
-            <InfoItem field={"น้ำหนัก: "} value={weight} />
-            <InfoItem field={"ส่วนสูง: "} value={height} />
-            <InfoItem update field={"เข้าร่วมเมื่อ: "} value={registerDate} />
+            <Name>{`${name} ${lastname}`}</Name>
+            <InfoItemWrapper>
+              <InfoItem field={"อายุ: "} value={`${age} ปี`} />
+              <InfoItem field={"น้ำหนัก: "} value={`${weight} กก.`} />
+              <InfoItem field={"ส่วนสูง: "} value={`${height} ซม.`} />
+            </InfoItemWrapper>
           </InfoWrapper>
         </InfoContainer>
         <MissionContainer>
+          <MissionTitle>ภารกิจประจำสัปดาห์นี้</MissionTitle>
           {
             map(missions, (m, id) => {
               return <MissionItem name={m.name} detail={m.detail} />
