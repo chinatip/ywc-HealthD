@@ -1,21 +1,18 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import Image from '../images/header-img.jpg'
+import { media, mediaExceed } from './media-style';
 
 import Document from '../images/document.svg'
 import Medal from '../images/medal.svg'
 import Photo from '../images/photo.svg'
 import Tab from '../images/tab.svg'
 
-import { media, mediaExceed } from './media-style';
 import HealthD from '../images/Logo.png'
 
 const Container = styled.div`
   height: 100%;
   width: 100%;
-  ${ media.tablet`
-
-  `}
 `
 const Header = styled.div`
   height: 70vh;
@@ -26,10 +23,28 @@ const Header = styled.div`
   background-size: cover;
   background-position: 0px -80px;
   background-repeat: no-repeat;
+  color: white;
+
+  .col-10 {
+    margin-left: -170px;
+  }
 
   h2 {
     text-shadow: 2px 2px 5px #000;
+    margin-top: 160px;
   }
+
+  ${media.tablet`
+
+    h2{
+      margin-top: 20px;
+      font-size: 23px;
+    }
+    .col-10 {
+      margin-top: 100px;
+      margin-left: 30px;
+    }
+  `}
 
 `;
 
@@ -65,8 +80,8 @@ class Home extends Component {
       <Container>
         <Header>
           <div class="row" style={{ width: '100%' }}>
-            <div class="col">
-              <h2 style={{ color: 'white', marginTop: '160px' }}>ของฟรีไม่มีขาย ถ้าอยากได้มาทำ <br />Mission เรา!</h2>
+            <div class="col-10">
+              <h2 style={{ }}>ของฟรีไม่มีขาย ถ้าอยากได้มาทำ <br />Mission เรา!</h2>
               <button type="submit" class="btn btn-default" style={{ width: '30%', backgroundColor: '#ef551f', color: 'white', borderRadius: '40px', marginTop: '20px' }}>เริ่มกันเลย</button>
             </div>
             <div class="col">
