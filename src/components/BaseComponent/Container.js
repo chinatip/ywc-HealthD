@@ -5,6 +5,11 @@ const ContainerWrapper = styled.div`
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
+
+  .row {
+    max-width: 900px !important;
+    margin: 0 auto !important;
+  }
 `;
 const InnerContainer = styled.div`
 

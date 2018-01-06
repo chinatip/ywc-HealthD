@@ -1,35 +1,32 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
+import Container from './BaseComponent/Container';
 import Info1 from '../images/Info1.jpg';
 import Info2 from '../images/Info2.jpg';
 import Info3 from '../images/Info3.jpg';
 
-const Container = styled.div`
-
-`
 const Header = styled.p`
   font-size: 2rem;
   margin-top: 50px;
 `;
 
 const Content = styled.div`
- img {
-  width: 80%;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: all 0.5s; 
-   &:hover {
-    opacity: 0.85;
-   }
- }
+  img {
+    width: 80%;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.5s;
 
+    &:hover {
+      opacity: 0.85;
+    }
+  }
 
- .row2{
-   margin-top: 40px;
-   margin-bottom: 100px;
- }
-
+  .row2{
+    margin-top: 40px;
+    margin-bottom: 100px;
+  }
 `
 
 const Modal = styled.div`
@@ -39,10 +36,7 @@ const Modal = styled.div`
 class Knowledge extends Component {
   render() {
     return (
-      <Container>
-        <Header>
-          <p>เปิดกรุเกร็ดความรู้… ดูซิว่าทำ(ภารกิจ)แล้วได้อะไร</p>
-        </Header>
+      <Container value={'เปิดกรุเกร็ดความรู้… ดูซิว่าทำ(ภารกิจ)แล้วได้อะไร'}>
         <Content>
           <div class="row">
             <div class="col col1">
@@ -77,7 +71,7 @@ class Knowledge extends Component {
 รศ.รัชนี คงคาฉุยฉาย ผู้อำนวยการสถาบันโภชนาการ มหาวิทยาลัยมหิดล ได้กล่าวว่า หากทาน ‘มะเขือเทศสด’ ติดต่อกันระยะหนึ่ง วิตามินซีและไลโคปีนที่อุดมอยู่ในมะเขือเทศสามารถช่วยให้ผิวใสขึ้นได้จริง แต่หากเลิกทาน ผิวก็จะกลับมาเป็นดังเดิม ส่วนใน ‘น้ำมะเขือเทศ’ แม้จะมีสารอาหารเช่นเดียวกับมะเขือเทศสด แต่ก็มีส่วนผสมอื่นๆ อยู่ด้วย เช่น น้ำตาล ซึ่งหากทานติดต่อกันก็อาจก่อให้เกิดโรคอ้วนแทนได้
 ดังนั้น ไม่ว่าจะเป็นการรับประทานมะเขือเทศแบบสดหรือแบบน้ำ ก็ควรทานในปริมาณที่เหมาะสมอย่างสม่ำเสมอ เพื่อสุขภาพที่ดีอย่างยั่งยืนนั่นเอง
 </p>
-<p style={{width: '90%',margin:'auto',paddingTop: 10, opacity: 0.7, textAlign: 'left', marginBottom: 10}}>ขอบคุณข้อมูลจาก https://www.matichon.co.th/news/105973</p>
+<p style={{width: '90%', margin:'auto', paddingTop: 10, opacity: 0.7, textAlign: 'left', marginBottom: 10}}>ขอบคุณข้อมูลจาก https://www.matichon.co.th/news/105973</p>
 
                 </div>
               </div>
