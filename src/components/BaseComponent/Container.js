@@ -10,10 +10,11 @@ const InnerContainer = styled.div`
 
 `;
 const Header = styled.div`
-  font-size: 30px;
+  font-size: 40px;
   line-height: 50px;
   font-weight: bold;
   letter-spacing: 2px;
+  margin: 30px 0;
 `;
 
 class Container extends Component {
