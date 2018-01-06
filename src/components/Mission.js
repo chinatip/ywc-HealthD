@@ -7,27 +7,42 @@ text-align: center;
 color: palevioletred;
 `;
 
-const profile = {
-  name: 'นาย YWC',
-  lastname: '#15',
-  missions: [
-    {
-      name: 'mission',
-      activeDate: {
-        startDate: '01/01/2018',
-        endDate: '07/01/2018'
-      },
-      detail: 'blah blah'
-
-    }
-  ]
-};
+const missions = [
+  {
+    id: 1,
+    date: {
+      startDate: '01/01/2018',
+      endDate: '06/01/2018'
+    },
+  },
+  {
+    id: 2,
+    date: {
+      startDate: '01/01/2018',
+      endDate: '06/01/2018'
+    },
+  },
+  {
+    id: 3,
+    date: {
+      startDate: '01/01/2018',
+      endDate: '06/01/2018'
+    },
+  },
+  {
+    id: 4,
+    date: {
+      startDate: '01/01/2018',
+      endDate: '06/01/2018'
+    },
+  }
+]
 
 class Mission extends Component {
   render() {
     return (
       <Container>
-        Profile
+        {missions.map((mission) => <div>{mission.id}</div>)}
       </Container>
     );
   }
