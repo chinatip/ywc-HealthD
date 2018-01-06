@@ -7,11 +7,15 @@ import Medal from '../images/medal.svg'
 import Photo from '../images/photo.svg'
 import Tab from '../images/tab.svg'
 
+import { media, mediaExceed } from './media-style';
 import HealthD from '../images/Logo.png'
 
 const Container = styled.div`
   height: 100%;
   width: 100%;
+  ${ media.tablet`
+
+  `}
 `
 const Header = styled.div`
   height: 70vh;
